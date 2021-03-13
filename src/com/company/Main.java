@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
 
         Animal dog = new Animal("dog");
-        dog.name = "Szarik";
+        dog.name = "Puszek";
         dog.feed();
 
         Phone iphone = new Phone("apple","S6","iOS",4.5);
@@ -18,24 +18,7 @@ public class Main {
         me.mobilePhone = iphone;
 
         dog.feed();
-        dog.takeForAWalk();
         dog.feed();
-        dog.takeForAWalk();
-        dog.takeForAWalk();
-        dog.takeForAWalk();
-        dog.takeForAWalk();
-        dog.takeForAWalk();
-        dog.takeForAWalk();
-        dog.takeForAWalk();
-        dog.takeForAWalk();
-        dog.takeForAWalk();
-        dog.takeForAWalk();
-        dog.takeForAWalk();
-        dog.takeForAWalk();
-        dog.takeForAWalk();
-        dog.takeForAWalk();
-        dog.takeForAWalk();
-        dog.takeForAWalk();
         dog.takeForAWalk();
         dog.takeForAWalk();
         dog.takeForAWalk();
