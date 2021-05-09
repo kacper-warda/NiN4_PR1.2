@@ -8,24 +8,20 @@ public class Main {
         dog.name = "Puszek";
         dog.feed();
 
-        Phone iphone = new Phone("apple","S6","iOS",4.5);
+        Phone iphone = new Phone("apple", "S6", "iOS", 4.5);
 
         System.out.println("producer = " + iphone.producer);
         System.out.println("name = " + dog.name);
 
 
-        Human me = new Human();
-        me.mobilePhone = iphone;
+        Human me = new Human(1000.0);
+        me.phone = iphone;
 
-        dog.feed();
-        dog.feed();
-        dog.takeForAWalk();
-        dog.takeForAWalk();
-        dog.takeForAWalk();
-        dog.takeForAWalk();
-        dog.takeForAWalk();
-        dog.takeForAWalk();
-        dog.takeForAWalk();
+        Double mySalary = me.getSalary();
+
+        Double newSalary = mySalary * 1.2;
+
+        me.setSalary(newSalary);
 
     }
 }
