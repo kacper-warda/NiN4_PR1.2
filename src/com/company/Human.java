@@ -1,5 +1,8 @@
 package com.company;
 
+import com.company.device.Car;
+import com.company.device.Phone;
+
 import java.util.Date;
 
 public class Human {
@@ -52,5 +55,9 @@ public class Human {
         } else {
             System.out.println("ZAKUP AUTA: porażka, zmień pracę");
         }
+    }
+
+    public String toString(){
+        return this.firstName + " " + this.lastName + " " + this.age + "l";
     }
 }

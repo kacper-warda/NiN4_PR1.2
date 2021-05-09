@@ -1,5 +1,8 @@
 package com.company;
 
+import com.company.device.Car;
+import com.company.device.Phone;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -15,6 +18,9 @@ public class Main {
 
 
         Human me = new Human(1000.0);
+        me.firstName = "Kacper";
+        me.lastName = "Warda";
+        me.age = 99;
         me.phone = iphone;
 
         Car fiat = new Car("fiat",
@@ -37,6 +43,10 @@ public class Main {
         myFiat.millage = 150000.0;
 
         System.out.println("licznik: "+me.getCar().millage);
+
+        System.out.println("Człowiek: " + me);
+        System.out.println(fiat);
+        System.out.println(myFiat);
 
 
     }
