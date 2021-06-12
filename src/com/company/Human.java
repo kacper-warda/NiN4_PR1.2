@@ -56,4 +56,9 @@ public class Human extends Animal {
     public String toString() {
         return this.firstName + " " + this.lastName + " " + this.age + "l";
     }
+
+    @Override
+    public void sell(Human seller, Human buyer, Double price){
+        System.out.println("HALO POLICJA!!!!!!");
+    }
 }

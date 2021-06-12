@@ -53,4 +53,8 @@ public class Animal {
             System.out.println("U CANNOT WALK THE STREET WITH DEAD ANIMAL IDIOT!");
         }
     }
+
+    public void sell(Human seller, Human buyer, Double price){
+        System.out.println("udało się sprzedać");
+    }
 }
