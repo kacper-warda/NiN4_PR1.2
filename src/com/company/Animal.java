@@ -3,10 +3,13 @@ package com.company;
 import java.io.File;
 
 public class Animal {
+    private static final Integer DEFAULT_WALK_DURATION = 10;
     final String species;
     public String name;
     private Double weight;
     File pic;
+    Integer age;
+    String sex;
 
     static public final Double DEFAULT_ANIMAL_WEIGHT = 1.0;
 
@@ -38,9 +41,14 @@ public class Animal {
     }
 
     public void takeForAWalk() {
+       this.takeForAWalk(DEFAULT_WALK_DURATION);
+    }
+
+    public void takeForAWalk(Integer numberOfMinutes) {
         if(this.weight > 0){
-            this.weight -= 1;
+            this.weight -= (0.1 * numberOfMinutes);
             System.out.println("thx for a walk, my weight is now " + this.weight);
+            System.out.println("walk takes "+ numberOfMinutes + " minutes");
         } else {
             System.out.println("U CANNOT WALK THE STREET WITH DEAD ANIMAL IDIOT!");
         }

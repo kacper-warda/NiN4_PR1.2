@@ -5,11 +5,10 @@ import com.company.device.Phone;
 
 import java.util.Date;
 
-public class Human {
+public class Human extends Animal {
+    private static final String HUMAN_SPECIES = "homo sapiens";
     String firstName;
     String lastName;
-    Integer age;
-    String sex;
 
     Phone phone;
     Animal pet;
@@ -17,6 +16,7 @@ public class Human {
     private Double salary;
 
     public Human(Double salary) {
+        super(HUMAN_SPECIES);
         this.salary = salary;
     }
 
@@ -38,18 +38,14 @@ public class Human {
     }
 
     public Car getCar() {
-        return new Car(this.car.producer,
-                this.car.model,
-                this.car.millage,
-                this.car.engineVolume,
-                this.car.getValue());
+        return this.car;
     }
 
     public void setCar(Car car) {
-        if(this.salary > car.getValue()){
+        if (this.salary > car.getValue()) {
             System.out.println("ZAKUP AUTA: gratulacje, kupiłeś za gotówkę");
             this.car = car;
-        } else if(this.salary > car.getValue()/12.0){
+        } else if (this.salary > car.getValue() / 12.0) {
             System.out.println("ZAKUP AUTA: nie aż takie gratulacje, kupiłeś na kredyt");
             this.car = car;
         } else {
@@ -57,7 +53,7 @@ public class Human {
         }
     }
 
-    public String toString(){
+    public String toString() {
         return this.firstName + " " + this.lastName + " " + this.age + "l";
     }
 }

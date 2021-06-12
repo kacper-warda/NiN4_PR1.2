@@ -1,15 +1,12 @@
 package com.company.device;
 
-public class Car {
-    public final String producer;
-    public final String model;
+public class Car extends Device {
     public Double millage;
     public Double engineVolume;
     private Double value;
 
-    public Car(String producer, String model, Double millage, Double engineVolume, Double value) {
-        this.producer = producer;
-        this.model = model;
+    public Car(String producer, String model, Integer productionYear, Double millage, Double engineVolume, Double value) {
+        super(producer, model, productionYear);
         this.millage = millage;
         this.engineVolume = engineVolume;
         this.value = value;
@@ -28,5 +25,13 @@ public class Car {
                 ", engineVolume=" + engineVolume +
                 ", value=" + value +
                 '}';
+    }
+
+    @Override
+    public void turnOn() {
+        System.out.println("otwieram drzwi");
+        System.out.println("kluczyk w stacyjkę");
+        System.out.println("kręcę");
+        System.out.println("zapalił");
     }
 }
