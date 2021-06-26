@@ -1,5 +1,7 @@
 package com.company.device;
 
+import com.company.Human;
+
 public class Car extends Device {
     public Double millage;
     public Double engineVolume;

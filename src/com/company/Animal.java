@@ -2,11 +2,11 @@ package com.company;
 
 import java.io.File;
 
-public class Animal {
+public class Animal implements Comparable<Animal> {
     private static final Integer DEFAULT_WALK_DURATION = 10;
     final String species;
     public String name;
-    private Double weight;
+    public Double weight;
     File pic;
     Integer age;
     String sex;
@@ -32,29 +32,54 @@ public class Animal {
     }
 
     public void feed() {
-        if(weight > 0){
+        if (weight > 0) {
             this.weight += 1;
             System.out.println("thx for food. My weight is now: " + this.weight);
-        }else {
+        } else {
             System.out.println("too late, sorry");
         }
     }
 
     public void takeForAWalk() {
-       this.takeForAWalk(DEFAULT_WALK_DURATION);
+        this.takeForAWalk(DEFAULT_WALK_DURATION);
     }
 
     public void takeForAWalk(Integer numberOfMinutes) {
-        if(this.weight > 0){
+        if (this.weight > 0) {
             this.weight -= (0.1 * numberOfMinutes);
             System.out.println("thx for a walk, my weight is now " + this.weight);
-            System.out.println("walk takes "+ numberOfMinutes + " minutes");
+            System.out.println("walk takes " + numberOfMinutes + " minutes");
         } else {
             System.out.println("U CANNOT WALK THE STREET WITH DEAD ANIMAL IDIOT!");
         }
     }
 
-    public void sell(Human seller, Human buyer, Double price){
+    public void sell(Human seller, Human buyer, Double price) {
         System.out.println("udało się sprzedać");
+    }
+
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "species='" + species + '\'' +
+                ", name='" + name + '\'' +
+                ", weight=" + weight +
+                '}';
+    }
+
+    @Override
+    public int compareTo(Animal otherAnimal) {
+
+        if (otherAnimal.weight == null) {
+            return 1;
+        } else if (this.weight == null) {
+            return -1;
+        } else if (otherAnimal.weight < this.weight) {
+            return 1;
+        } else if (otherAnimal.weight > this.weight) {
+            return -1;
+        } else {
+            return 0;
+        }
     }
 }

@@ -4,56 +4,49 @@ import com.company.device.Car;
 import com.company.device.Device;
 import com.company.device.Phone;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
 
-        Animal dog = new Animal("dog");
-        dog.name = "Puszek";
-        dog.feed();
-        dog.takeForAWalk();
+        String[] names = {"Kacper","Marian","Janusz","Karolina"};
 
-        Phone iphone = new Phone("apple", "S6", 2020,
-                "iOS", 4.5);
+        Double[] numbers = new Double[5];
+        numbers[0] = 231.2;
+        numbers[1] = -231.2;
+        numbers[2] = 131.2;
+        numbers[3] = 4231.2;
+        numbers[4] = 2345321.2;
 
-        System.out.println("producer = " + iphone.producer);
-        System.out.println("name = " + dog.name);
+        System.out.println("numbers:");
+        for(Double n : numbers){
+            System.out.println(n);
+        }
 
+        Arrays.sort(numbers);
+        System.out.println("posortowane:");
 
-        Human me = new Human(1000.0);
-        me.firstName = "Kacper";
-        me.lastName = "Warda";
-        me.age = 99;
-        me.phone = iphone;
+        for(int i = 0; i < numbers.length; i++){
+            Double n = numbers[i];
+            System.out.println(n);
+        }
 
-        Car fiat = new Car("fiat",
-                "bravo",
-                2015,
-                315000.0,
-                1.6,
-                13000.0);
+        System.out.println(Arrays.toString(names));
+        Arrays.sort(names);
+        System.out.println(Arrays.toString(names));
 
-        me.setCar(fiat);
+        Animal[] farm = new Animal[4];
+        farm[0] = new Animal("dog");
 
-        Double mySalary = me.getSalary();
-        Double newSalary = mySalary * 1.2;
-        me.setSalary(newSalary);
+        farm[2] = new Animal("cow");
+        farm[3] = new Animal("chicken");
 
-        me.setCar(fiat);
+        System.out.println(Arrays.deepToString(farm));
 
-        System.out.println("licznik: "+me.getCar().millage);
+        Arrays.sort(farm,new AnimalWeightComparator());
 
-        Car myFiat = me.getCar();
-        myFiat.millage = 150000.0;
-
-        System.out.println("licznik: "+me.getCar().millage);
-
-        System.out.println("Człowiek: " + me);
-        System.out.println(fiat);
-        System.out.println(myFiat);
-
-        iphone.installAnApp("facebóg");
-        iphone.installAnApp("signal","2.1.3");
+        System.out.println(Arrays.deepToString(farm));
 
     }
 }
